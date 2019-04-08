@@ -1,17 +1,17 @@
 package com.entity.cn;
 
-public class UserExample {
+public class Example {
 	
 	public String where = " 1=1 ";
 	public String condition = " = ";
 	
-	public void whereID(String type,String value) {
+	public void where(String type,String value) {
 		combime(" and "+type+this.condition+" '"+value+"'");
 	}
-	public void whereID(String type,String value,String condition) {
+	public void where(String type,String value,String condition) {
 		combime(" and "+type+condition+" '"+value+"'");
 	}
-	public void whereID(String type,String value,String condition1,String condition2) {
+	public void where(String type,String value,String condition1,String condition2) {
 		combime(" and "+type+condition1+" '"+value+"'");
 		combime(" and "+type+condition2+" '"+value+"'");
 	}
