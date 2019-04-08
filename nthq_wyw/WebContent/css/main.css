@@ -1,0 +1,14 @@
+.wbody{
+	background-color: whitesmoke;
+}
+
+.form-signin{
+	width: 220px;
+	height: 100px;
+}
+
+.form-signin-heading{
+	font-size: 21px;
+	text-align: center;
+}
+

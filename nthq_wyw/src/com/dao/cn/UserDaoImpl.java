@@ -2,8 +2,8 @@ package com.dao.cn;
 
 import java.util.List;
 
+import com.common.cn.Example;
 import com.entity.cn.User;
-import com.entity.cn.Example;
 
 public interface UserDaoImpl {
 	boolean insert(User user);
@@ -12,5 +12,4 @@ public interface UserDaoImpl {
 	User findByID(String id);
 	List<User> findAll(Example userExample);
 	List<User> findAll();
-
 }

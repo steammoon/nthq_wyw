@@ -1,4 +1,4 @@
-package com.entity.cn;
+package com.common.cn;
 
 public class Example {
 	

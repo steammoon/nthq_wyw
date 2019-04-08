@@ -2,7 +2,8 @@ package com.entity.cn;
 
 public class User {
 	private String id;//ID
-	private String username;//用户名
+	private String name;//姓名
+	private String account;//用户名
 	private String password;//密码
 	private String phoneNum;//手机号
 	private String email;//邮箱
@@ -10,17 +11,30 @@ public class User {
 	private String effective;//有效性
 	private String cardnum;//身份证号
 	private String userdetail;//身份证号
+	private String status;//状态
 	public String getId() {
 		return id;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAccount() {
+		return account;
+	}
+	public void setAccount(String account) {
+		this.account = account;
 	}
 	public String getPassword() {
 		return password;
@@ -64,4 +78,5 @@ public class User {
 	public void setUserdetail(String userdetail) {
 		this.userdetail = userdetail;
 	}
+	
 }
