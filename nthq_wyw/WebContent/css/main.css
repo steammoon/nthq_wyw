@@ -10,5 +10,15 @@
 .form-signin-heading{
 	font-size: 21px;
 	text-align: center;
+	border-color: crimson;
 }
 
+#dropdownMenu1{
+	background-color: rgb(34,34,34);
+	border: none;
+	color: white;
+}
+#dropdownMenu1:hover{
+	background-color: white;
+	color: rgb(34,34,34);
+}

@@ -70,5 +70,4 @@ public class Login extends HttpServlet {
 			out.print("<script>alert('Î´Öª´íÎó£¡');history.go(-1);</script>");
 		}
 	}
-
 }
