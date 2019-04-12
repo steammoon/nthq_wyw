@@ -43,8 +43,11 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		UserSV userSV = new UserSV();
 		Integer issu = 1;
+		System.out.println(account);
+		System.out.println(password);
 		try {
 			issu = userSV.login(account, password);
+			System.out.println(issu);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
