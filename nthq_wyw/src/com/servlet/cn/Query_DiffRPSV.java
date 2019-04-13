@@ -35,19 +35,18 @@ public class Query_DiffRPSV extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		Table_DiffRPSV sv = new Table_DiffRPSV();
+		JSONArray json = new JSONArray(); 
 		try {
-			JSONArray json = sv.queryList();
-			response.setCharacterEncoding("utf-8");
-			response.setContentType("text/html;charset=utf-8");
-			PrintWriter out = response.getWriter();
-			System.out.println(json.toString());
-			out.write("123");
-			out.flush();
+			json = sv.queryList();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		finally {
-			
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			out.print(json);
+			out.flush();
 		} 
 	}
 

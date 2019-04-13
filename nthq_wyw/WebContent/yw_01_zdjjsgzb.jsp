@@ -21,26 +21,32 @@
 			   $.ajax({
 				   type:'get',
 				   url:'http://localhost:8080/nthq_wyw/Query_DiffRPSV',
-				   dataType:'text',
+				   dataType:'json',
 				   error: function(){
 					   alert("获取数据失败！");
 				   },
 				   success: function(data){
 					   alert("获取数据成功！");
-					   if(data){
-						   //var json = eval('(' + data + ')');
-						   alert(data);
-					   }
+					   console.log(data);
+					   var str = "";
+					   for(var i=0; i < data.length; i++) {
+						str += "<tr>";
+						str += "<td style='text-align:center;'>" + data[i].BusinessDate + "</td>";
+						str += "<td>" + data[i].Dept + "</td>";
+						str += "<td>" + data[i].Item + "</td>";
+						str += "<td>" + data[i].DocNo + "</td>";
+						str += "<td>" + data[i].OrderBy + "</td>";
+						str += "<td>" + data[i].Contract + "</td>";
+						str += "<td>" + data[i].BLQty + "</td>";
+						str += "<td>" + data[i].TemPrice + "</td>";
+						str += "<tr>";
+						}
+					   $("#hs").append(str);
 				   }
 			   })
 		   })
 		</script>
-		<form>
-			<input type="submit" value="提交"/>
-		</form>
-			<%
-				out.println("Your IP address is " + request.getRemoteAddr());
-			%>
+		<table id= "hs" class="table table-striped table-bordered table-condensed"></table>
 		</div>
 	</body>
 </html>
