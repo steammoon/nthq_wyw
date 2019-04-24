@@ -22,9 +22,7 @@ $(function () {
 	 	var m = $(this).parent().children().last();
 		if(m.css("display")=="none"){
 			$(".nav1-body-list").css({ "display": "none" });
-	 		m.css({"display":"block","position":"absolute","left":"121px","border":"solid","border-color":"rgb(197,197,197)","border-width":"1px","border-radius":"3px"});
-	 	    m.height(80);
-	 	    m.width(240);
+	 		m.css({"display":"block"});
 		}
 		else {
 			m.css({"display":"none"});
@@ -32,12 +30,12 @@ $(function () {
 	 }) 
 
 	 $(".nav1-body-btn").mouseleave(function(){
-		 $(window).mousedown(function(){
-			 if($(".nav1-body-list").css("display")=="block"){
-				$(".nav1-body-list").css({ "display": "none" });
-			 }
-		 })
-	 })
+		$(window).mousedown(function(){
+			if($(".nav1-body-list").css("display")=="block"){
+			   $(".nav1-body-list").css({ "display": "none" });
+			}
+		})
+	})
 
 
 	$("#dropdownMenu2").click(function() {

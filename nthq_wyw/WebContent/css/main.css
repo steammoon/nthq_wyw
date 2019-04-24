@@ -162,9 +162,15 @@
 	padding:0px;
 	list-style: none;
 	display:none;
-	height: 40px;
-	width: 50px;
+	height: 80px;
+	width: 240px;
 	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	position: absolute;
+	left:121px;
+	border:solid;
+	border-color:rgb(197,197,197);
+	border-width:1px;
+	border-radius:3px;
 }
 
 
