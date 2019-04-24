@@ -11,6 +11,24 @@ $(function(){
 			alert("密码不能为空！");
 		}
 	})
+
+	$("#dropdownMenu2").click(function(){
+		$(this).css({"border":"none"});
+		$(".dropdown").css({"border":"none"});
+		$(".set").css({"padding-left":"10px","width":"100%"});
+		$(".set:hover").css({"background-color":"blue"});
+		$("#hw-menu1").css({"min-width":"56px"});
+	})
+
+	$("#dropdownMenu2").mouseleave(function(){
+		$(this).css({"border":"none"});
+		$(".dropdown").css({"border":"none"});
+	})
+
+	$("#dropdownMenu2").mouseout(function(){
+		$(this).css({"border":"none"});
+		$(".dropdown").css({"border":"none"});
+	})
 })
 
 function form_post(){

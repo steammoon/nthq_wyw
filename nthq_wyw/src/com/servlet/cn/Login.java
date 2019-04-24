@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.service.cn.UserSV;
 
@@ -30,8 +31,15 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String account = request.getParameter("account");
+		HttpSession session = request.getSession();
+		session.setAttribute("account", account);
+		if(account == null || account.equals("null")) {
+			request.getRequestDispatcher("Login.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}	
 	}
 
 	/**
@@ -43,16 +51,13 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		UserSV userSV = new UserSV();
 		Integer issu = 1;
-		System.out.println(account);
-		System.out.println(password);
 		try {
 			issu = userSV.login(account, password);
-			System.out.println(issu);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		if(issu == 0) {
-			response.sendRedirect("index.html");
+			doGet(request, response);
 		}
 		else if (issu == 1) {
 			response.setCharacterEncoding("utf-8");
