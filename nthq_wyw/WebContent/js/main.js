@@ -1,40 +1,67 @@
-$(function(){
+$(function () {
 	form_post();
-	$(window).resize(function(){
+	$(window).resize(function() {
 		form_post();
 	})
-	$("#btnlogin").click(function(){
-		if($("#inputEmail").val()==""){
+
+	$(window).load(function() {
+		$(".block-main").height($(window).height() - 50);
+	})
+
+	$("#btnlogin").click(function() {
+		if ($("#inputEmail").val() == "") {
 			alert("用户名不能为空！");
 		}
-		else if($("#inputPassword").val()==""){
+		else if ($("#inputPassword").val() == "") {
 			alert("密码不能为空！");
 		}
 	})
 
-	$("#dropdownMenu2").click(function(){
-		$(this).css({"border":"none"});
-		$(".dropdown").css({"border":"none"});
-		$(".set").css({"padding-left":"10px","width":"100%"});
-		$(".set:hover").css({"background-color":"blue"});
-		$("#hw-menu1").css({"min-width":"56px"});
+ 	//导航条弹出效果
+	$(".nav1-body-btn").click(function(){
+	 	var m = $(this).parent().children().last();
+		if(m.css("display")=="none"){
+			$(".nav1-body-list").css({ "display": "none" });
+	 		m.css({"display":"block","position":"absolute","left":"121px","border":"solid","border-color":"rgb(197,197,197)","border-width":"1px","border-radius":"3px"});
+	 	    m.height(80);
+	 	    m.width(240);
+		}
+		else {
+			m.css({"display":"none"});
+		}
+	 }) 
+
+	 $(".nav1-body-btn").mouseleave(function(){
+		 $(window).mousedown(function(){
+			 if($(".nav1-body-list").css("display")=="block"){
+				$(".nav1-body-list").css({ "display": "none" });
+			 }
+		 })
+	 })
+
+
+	$("#dropdownMenu2").click(function() {
+		$(this).css({ "border": "none" });
+		$(".dropdown").css({ "border": "none" });
+		$(".set").css({ "padding-left": "10px", "width": "100%" });
+		$("#hw-menu1").css({ "min-width": "56px" });
 	})
 
-	$("#dropdownMenu2").mouseleave(function(){
-		$(this).css({"border":"none"});
-		$(".dropdown").css({"border":"none"});
+	$("#dropdownMenu2").mouseleave(function() {
+		$(this).css({ "border": "none" });
+		$(".dropdown").css({ "border": "none" });
 	})
 
-	$("#dropdownMenu2").mouseout(function(){
-		$(this).css({"border":"none"});
-		$(".dropdown").css({"border":"none"});
+	$("#dropdownMenu2").mouseout(function () {
+		$(this).css({ "border": "none" });
+		$(".dropdown").css({ "border": "none" });
 	})
 })
 
-function form_post(){
+function form_post() {
 	var sw = $(document.body).width();
-    var sh = $(window).height();
-    var nav_sh = $("#nav1").height();
-    $("#formlogin").offset({top:sh/2-200,left:sw/2-110})
-    $("#dropdownMenu1").height(nav_sh-12);
+	var sh = $(window).height();
+	var nav_sh = $("#nav1").height();
+	$("#formlogin").offset({ top: sh / 2 - 200, left: sw / 2 - 110 })
+	$("#dropdownMenu1").height(nav_sh - 12);
 }
