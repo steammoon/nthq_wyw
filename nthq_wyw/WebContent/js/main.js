@@ -4,10 +4,13 @@ $(function () {
 		form_post();
 	})
 
+	//div大小自适应
 	$(window).load(function() {
 		$(".block-main").height($(window).height() - 50);
+		$(".text-body").width($(window).width() - 120);
 	})
 
+    //登陆校验
 	$("#btnlogin").click(function() {
 		if ($("#inputEmail").val() == "") {
 			alert("用户名不能为空！");
@@ -29,11 +32,9 @@ $(function () {
 		}
 	 }) 
 
-	 $(".nav1-body-btn").mouseleave(function(){
-		$(window).mousedown(function(){
-			if($(".nav1-body-list").css("display")=="block"){
-			   $(".nav1-body-list").css({ "display": "none" });
-			}
+	$(".text-body").mousedown(function(){
+		$(".text-body").mouseup(function(){
+			$(".nav1-body-list").css({ "display": "none" });
 		})
 	})
 
@@ -54,6 +55,8 @@ $(function () {
 		$(this).css({ "border": "none" });
 		$(".dropdown").css({ "border": "none" });
 	})
+
+
 })
 
 function form_post() {
@@ -63,3 +66,5 @@ function form_post() {
 	$("#formlogin").offset({ top: sh / 2 - 200, left: sw / 2 - 110 })
 	$("#dropdownMenu1").height(nav_sh - 12);
 }
+
+

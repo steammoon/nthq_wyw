@@ -12,6 +12,14 @@ public class User {
 	private String cardnum;//身份证号
 	private String userdetail;//身份证号
 	private String status;//状态
+	private String imgpath;//图片路径
+	public String getImgpath() {
+		return imgpath;
+	}
+	public void setImgpath(String imgpath) {
+		this.imgpath = imgpath;
+	}
+	
 	public String getId() {
 		return id;
 	}

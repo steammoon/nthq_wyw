@@ -29,4 +29,36 @@ public class UserSV {
 			return 0;
 		}
 	}
+	
+	public Integer UpImgPath(String account,String imgpath) {
+		UserDao dao = new UserDao();
+		User user =new User();
+		Example example = new Example();
+		example.where("account",account);
+		List<User> list = dao.findAll(example);
+		if(list.size()<=0) {
+			return 1;
+		}
+		else {
+			user = list.get(0);
+			user.setImgpath(imgpath);
+			dao.update(user);
+			return 0;
+		}
+	}
+	
+	public User findAll(String account) {
+		UserDao dao = new UserDao();
+		User user =new User();
+		Example example = new Example();
+		example.where("account",account);
+		List<User> list = dao.findAll(example);
+		if(list.size()<=0) {
+			return null;
+		}
+		else {
+			user = list.get(0);
+			return user;
+		}
+	}
 }

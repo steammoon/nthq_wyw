@@ -67,7 +67,7 @@ public class UserDao implements UserDaoImpl {
 		PreparedStatement statement = null;
 		ConnectMysql ctsql = new ConnectMysql();
 		Connection ct = ctsql.mysqlconnect();
-		String sql = "update nthq_wyw_user set name=?,account=?,password=?,phoneNum=?,email=?,effective=?,cardnum=?,status=?,userdetail=? where id=?"; 
+		String sql = "update nthq_wyw_user set name=?,account=?,password=?,phoneNum=?,email=?,effective=?,cardnum=?,status=?,userdetail=?,imgpath=? where id=?"; 
 		try {
 			statement = ct.prepareStatement(sql);
 			statement.setNString(1,user.getName());
@@ -79,7 +79,8 @@ public class UserDao implements UserDaoImpl {
 			statement.setNString(7,user.getCardnum());
 			statement.setNString(8,user.getStatus());
 			statement.setNString(9,user.getUserdetail());
-			statement.setNString(10,user.getId());
+			statement.setNString(10,user.getImgpath());
+			statement.setNString(11,user.getId());
 		    boolean rst = statement.execute();
 		    return rst;
 		} catch (SQLException e) {
@@ -114,6 +115,7 @@ public class UserDao implements UserDaoImpl {
 				user.setCardnum(rs.getString("cardnum"));
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
+				user.setImgpath(rs.getString("imgpath"));
 			}		
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -148,6 +150,7 @@ public class UserDao implements UserDaoImpl {
 				user.setCardnum(rs.getString("cardnum"));
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
+				user.setImgpath(rs.getString("imgpath"));
 			    list.add(user);
 			    user = null;
 			}
@@ -184,7 +187,8 @@ public class UserDao implements UserDaoImpl {
 				user.setCardnum(rs.getString("cardnum"));
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
-			    list.add(user);
+				user.setImgpath(rs.getString("imgpath"));
+				list.add(user);
 				user = null;
 			}
 		} catch (Exception e) {

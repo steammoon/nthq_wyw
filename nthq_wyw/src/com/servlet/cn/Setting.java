@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.entity.cn.User;
+import com.service.cn.UserSV;
+
 /**
  * Servlet implementation class Setting
  */
@@ -27,9 +30,12 @@ public class Setting extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String account = request.getParameter("account");
+		String account = request.getParameter("account").toString();
 		HttpSession session = request.getSession();
+		UserSV sv = new UserSV();
+		User user = sv.findAll(account);
 		session.setAttribute("account", account);
+		request.setAttribute("user", user);
 		if(account == null || account.equals("null")) {
 			request.getRequestDispatcher("Login.jsp").forward(request, response);
 		}
