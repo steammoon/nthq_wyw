@@ -56,6 +56,13 @@ $(function () {
 		$(".dropdown").css({ "border": "none" });
 	})
 
+	//$(".inp4").blur(function(){
+		//$(document).click(function(){
+	//		alert($(this).prop("tagName"));
+	//		$(".inp4").attr("readonly","readonly");
+	//		$(".inp4").css({ "background-color": "rgb(240, 240, 240)","border":"none","border-width":"0px","border-style":"solid" });
+	//	})
+	//})
 
 })
 
@@ -67,4 +74,18 @@ function form_post() {
 	$("#dropdownMenu1").height(nav_sh - 12);
 }
 
+//修改基础信息
+function clrev(obj){
+	var tep = obj;
+    $(tep).parent().prev().children().removeAttr('readonly');
+    $(tep).parent().prev().children().css({ "background-color": "white","border":"rgb(240, 240, 240)","border-width":"1px","border-style":"solid" });
+}
 
+function clout(obj){
+	var tep =obj;
+	$(document).click(function(me){
+		$(tep).parent().next().children().attr("readonly","readonly");
+		$(tep).parent().next().children().css({ "background-color": "rgb(240, 240, 240)","border":"none","border-width":"0px","border-style":"solid" });
+
+	})
+}

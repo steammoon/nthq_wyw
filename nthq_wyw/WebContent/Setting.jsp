@@ -54,6 +54,58 @@
     <diV class="text-body-1">
         <div class="text-body-1-1">
             <diV class="text-body-1-1-1">
+            <table id="text-table1">
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getName()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td4"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</div></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getBirthday()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td4"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</div></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getPhoneNum()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td4"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</div></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getEmail()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td4"></td>
+                </tr>
+            </table>
+            <table id="text-table2">
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</div></td>
+                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getNickname()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td6"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</div></td>
+                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getSex()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td6"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;婚姻状况：</div></td>
+                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getMarstatus()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);" /></td>
+                    <td class="td6"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;星&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;座：</div></td>
+                    <td class="td5"><input class="inp4" readonly="readonly" type="text" onblur="clout(this);" value="<%=user.getConstellation()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);" /></td>
+                    <td class="td6"></td>
+                </tr>
+            </table>
             </div>
             <div class="text-body-1-1-2">
                 <div class="head-img-frame">

@@ -19,7 +19,7 @@ public class UserDao implements UserDaoImpl {
 		PreparedStatement statement = null;
 		ConnectMysql ctsql = new ConnectMysql();
 		Connection ct = ctsql.mysqlconnect();
-		String sql = "insert into nthq_wyw_user (id,name,account,password,phoneNum,email,createtime,effective,cardnum,status,userdetail) VALUES (?,?,?,?,?,?,?,?,?,?,?)"; 
+		String sql = "insert into nthq_wyw_user (id,name,account,password,phoneNum,email,createtime,effective,cardnum,status,userdetail,imgpath,sex,education,marstatus,nickname,birthday,byear,bmonth,bdate,constellation,nation,live_province,live_city,live_area,address,home_province,home_city,home_area) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
 		try {
 			statement = ct.prepareStatement(sql);
 			statement.setNString(1,user.getId());
@@ -33,6 +33,24 @@ public class UserDao implements UserDaoImpl {
 			statement.setNString(9,user.getCardnum());
 			statement.setNString(10,user.getStatus());
 			statement.setNString(11,user.getUserdetail());
+			statement.setNString(12,user.getImgpath());
+			statement.setNString(13,user.getSex());
+			statement.setNString(14,user.getEducation());
+			statement.setNString(15,user.getMarstatus());
+			statement.setNString(16,user.getNickname());
+			statement.setNString(17,user.getBirthday());
+			statement.setNString(18,user.getByear());
+			statement.setNString(19,user.getBmonth());
+			statement.setNString(20,user.getBdate());
+			statement.setNString(21,user.getConstellation());
+			statement.setNString(22,user.getNation());
+			statement.setNString(23,user.getLive_province());
+			statement.setNString(24,user.getLive_city());
+			statement.setNString(25,user.getLive_area());
+			statement.setNString(26,user.getAddress());
+			statement.setNString(27,user.getHome_province());
+			statement.setNString(28,user.getHome_city());
+			statement.setNString(29,user.getHome_area());
 		    boolean rst = statement.execute();
 		    return rst;
 		} catch (SQLException e) {
@@ -67,7 +85,7 @@ public class UserDao implements UserDaoImpl {
 		PreparedStatement statement = null;
 		ConnectMysql ctsql = new ConnectMysql();
 		Connection ct = ctsql.mysqlconnect();
-		String sql = "update nthq_wyw_user set name=?,account=?,password=?,phoneNum=?,email=?,effective=?,cardnum=?,status=?,userdetail=?,imgpath=? where id=?"; 
+		String sql = "update nthq_wyw_user set name=?,account=?,password=?,phoneNum=?,email=?,effective=?,cardnum=?,status=?,userdetail=?,imgpath=?,sex=?,education=?,marstatus=?,nickname=?,birthday=?,byear=?,bmonth=?,bdate=?,constellation=?,nation=?,live_province=?,live_city=?,live_area=?,address=?,home_province=?,home_city=?,home_area=? where id=?"; 
 		try {
 			statement = ct.prepareStatement(sql);
 			statement.setNString(1,user.getName());
@@ -80,7 +98,24 @@ public class UserDao implements UserDaoImpl {
 			statement.setNString(8,user.getStatus());
 			statement.setNString(9,user.getUserdetail());
 			statement.setNString(10,user.getImgpath());
-			statement.setNString(11,user.getId());
+			statement.setNString(11,user.getSex());
+			statement.setNString(12,user.getEducation());
+			statement.setNString(13,user.getMarstatus());
+			statement.setNString(14,user.getNickname());
+			statement.setNString(15,user.getBirthday());
+			statement.setNString(16,user.getByear());
+			statement.setNString(17,user.getBmonth());
+			statement.setNString(18,user.getBdate());
+			statement.setNString(19,user.getConstellation());
+			statement.setNString(20,user.getNation());
+			statement.setNString(21,user.getLive_province());
+			statement.setNString(22,user.getLive_city());
+			statement.setNString(23,user.getLive_area());
+			statement.setNString(24,user.getAddress());
+			statement.setNString(25,user.getHome_province());
+			statement.setNString(26,user.getHome_city());
+			statement.setNString(27,user.getHome_area());
+			statement.setNString(28,user.getId());
 		    boolean rst = statement.execute();
 		    return rst;
 		} catch (SQLException e) {
@@ -116,6 +151,23 @@ public class UserDao implements UserDaoImpl {
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
 				user.setImgpath(rs.getString("imgpath"));
+				user.setSex(rs.getString("sex"));
+				user.setEducation(rs.getString("education"));
+				user.setMarstatus(rs.getString("marstatus"));
+				user.setNickname(rs.getString("nickname"));
+				user.setBirthday(rs.getString("birthday"));
+				user.setByear(rs.getString("byear"));
+				user.setBmonth(rs.getString("bmonth"));
+				user.setBdate(rs.getString("bdate"));
+				user.setConstellation(rs.getString("constellation"));
+				user.setNation(rs.getString("nation"));
+				user.setLive_province(rs.getString("live_province"));
+				user.setLive_city(rs.getString("live_city"));
+				user.setLive_area(rs.getString("live_area"));
+				user.setAddress(rs.getString("address"));
+				user.setHome_province(rs.getString("home_province"));
+				user.setHome_city(rs.getString("home_city"));
+				user.setHome_area(rs.getString("home_area"));
 			}		
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -151,6 +203,23 @@ public class UserDao implements UserDaoImpl {
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
 				user.setImgpath(rs.getString("imgpath"));
+				user.setSex(rs.getString("sex"));
+				user.setEducation(rs.getString("education"));
+				user.setMarstatus(rs.getString("marstatus"));
+				user.setNickname(rs.getString("nickname"));
+				user.setBirthday(rs.getString("birthday"));
+				user.setByear(rs.getString("byear"));
+				user.setBmonth(rs.getString("bmonth"));
+				user.setBdate(rs.getString("bdate"));
+				user.setConstellation(rs.getString("constellation"));
+				user.setNation(rs.getString("nation"));
+				user.setLive_province(rs.getString("live_province"));
+				user.setLive_city(rs.getString("live_city"));
+				user.setLive_area(rs.getString("live_area"));
+				user.setAddress(rs.getString("address"));
+				user.setHome_province(rs.getString("home_province"));
+				user.setHome_city(rs.getString("home_city"));
+				user.setHome_area(rs.getString("home_area"));
 			    list.add(user);
 			    user = null;
 			}
@@ -188,6 +257,23 @@ public class UserDao implements UserDaoImpl {
 				user.setStatus(rs.getString("status"));
 				user.setUserdetail(rs.getString("userdetail"));
 				user.setImgpath(rs.getString("imgpath"));
+				user.setSex(rs.getString("sex"));
+				user.setEducation(rs.getString("education"));
+				user.setMarstatus(rs.getString("marstatus"));
+				user.setNickname(rs.getString("nickname"));
+				user.setBirthday(rs.getString("birthday"));
+				user.setByear(rs.getString("byear"));
+				user.setBmonth(rs.getString("bmonth"));
+				user.setBdate(rs.getString("bdate"));
+				user.setConstellation(rs.getString("constellation"));
+				user.setNation(rs.getString("nation"));
+				user.setLive_province(rs.getString("live_province"));
+				user.setLive_city(rs.getString("live_city"));
+				user.setLive_area(rs.getString("live_area"));
+				user.setAddress(rs.getString("address"));
+				user.setHome_province(rs.getString("home_province"));
+				user.setHome_city(rs.getString("home_city"));
+				user.setHome_area(rs.getString("home_area"));
 				list.add(user);
 				user = null;
 			}
