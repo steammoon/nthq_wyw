@@ -9,6 +9,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/jscript" src="js/main.js" charset="UTF-8"></script>
 <script src="js/upload.js"></script>
+<script src="dist/distpicker.js"></script>
 
 <head>
     <meta charset="utf-8" />
@@ -54,27 +55,39 @@
     <diV class="text-body-1">
         <div class="text-body-1-1">
             <diV class="text-body-1-1-1">
+            <div id="text-title1">基本信息</div>
             <table id="text-table1">
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</div></td>
+                    <td class="td7"></td>
                     <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getName()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
                     <td class="td4"></td>
                 </tr>
                 <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</div></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getNickname()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td4"></td>
+                </tr>
+                <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</div></td>
+                    <td class="td7"></td>
                     <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getBirthday()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
                     <td class="td4"></td>
                 </tr>
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</div></td>
+                    <td class="td7"></td>
                     <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getPhoneNum()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
                     <td class="td4"></td>
                 </tr>
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</div></td>
+                    <td class="td7"></td>
                     <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getEmail()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
                     <td class="td4"></td>
@@ -82,28 +95,39 @@
             </table>
             <table id="text-table2">
                 <tr>
-                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</div></td>
-                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getNickname()%>"/></td>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍：</div></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getNation()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
-                    <td class="td6"></td>
+                    <td class="td7"></td>
                 </tr>
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</div></td>
-                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getSex()%>"/></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getSex()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
-                    <td class="td6"></td>
+                    <td class="td7"></td>
+                </tr>
+                <tr>
+                    <td class="td1"><div class="td1-1">&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：</div></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getEducation()%>"/></td>
+                    <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);"/></td>
+                    <td class="td7"></td>
                 </tr>
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;婚姻状况：</div></td>
-                    <td class="td5"><input class="inp4" readonly="readonly" type="text" value="<%=user.getMarstatus()%>"/></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" value="<%=user.getMarstatus()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);" /></td>
-                    <td class="td6"></td>
+                    <td class="td7"></td>
                 </tr>
                 <tr>
                     <td class="td1"><div class="td1-1">&nbsp;&nbsp;星&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;座：</div></td>
-                    <td class="td5"><input class="inp4" readonly="readonly" type="text" onblur="clout(this);" value="<%=user.getConstellation()%>"/></td>
+                    <td class="td7"></td>
+                    <td class="td2"><input class="inp4" readonly="readonly" type="text" onblur="clout(this);" value="<%=user.getConstellation()%>"/></td>
                     <td class="td3"><img class="ico4" src="img/revised-3.png" onclick="clrev(this);" /></td>
-                    <td class="td6"></td>
+                    <td class="td7"></td>
                 </tr>
             </table>
             </div>
@@ -143,6 +167,33 @@
         </diV>
     </div>
     <div class="text-body-2">
+    <div class="text-body-2-1">
+    <div id="text-title1">地址信息</div>
+    <table id="text-table3">
+        <tr class="text-table3-tr">
+            <div data-toggle="distpicker">
+            <div class="sel0">&nbsp;&nbsp;居&nbsp;&nbsp;住&nbsp;&nbsp;地：</div>
+            <div class="sel2"></div>
+            <select class="sel1" data-province="------ 选择省 ------"></select>
+            <div class="sel2"></div>
+            <select class="sel1" data-city="------ 选择市 ------"></select>
+            <div class="sel2"></div>
+            <select class="sel1" data-district="------ 选择区 ------"></select>
+            </div>
+        </tr>
+        <tr class="text-table3-tr">
+            <div data-toggle="distpicker">
+            <div class="sel0">&nbsp;&nbsp;居&nbsp;&nbsp;住&nbsp;&nbsp;地：</div>
+            <div class="sel2"></div>
+            <select class="sel1" data-province="------ 选择省 ------"></select>
+            <div class="sel2"></div>
+            <select class="sel1" data-city="------ 选择市 ------"></select>
+            <div class="sel2"></div>
+            <select class="sel1" data-district="------ 选择区 ------"></select>
+            </div>
+        </tr>
+    </table>
+    </div>
     </div>
 </div>
 </body>
