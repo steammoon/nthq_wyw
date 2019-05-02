@@ -174,22 +174,52 @@
             <div data-toggle="distpicker">
             <div class="sel0">&nbsp;&nbsp;居&nbsp;&nbsp;住&nbsp;&nbsp;地：</div>
             <div class="sel2"></div>
+            <%if(user.getLive_province() == ""){%>
             <select class="sel1" data-province="------ 选择省 ------"></select>
+            <%}%>
+            <%if(user.getLive_province() != ""){%>
+            <select class="sel1" data-province="<%=user.getLive_province()%>"></select>
+            <%}%>
             <div class="sel2"></div>
+            <%if(user.getLive_city() == ""){%>
             <select class="sel1" data-city="------ 选择市 ------"></select>
+            <%}%>
+            <%if(user.getLive_city() != ""){%>
+            <select class="sel1" data-city="<%=user.getLive_city()%>"></select>
+            <%}%>
             <div class="sel2"></div>
+            <%if(user.getLive_area() == ""){%>
             <select class="sel1" data-district="------ 选择区 ------"></select>
+            <%}%>
+            <%if(user.getLive_area() != ""){%>
+            <select class="sel1" data-district="<%=user.getLive_area()%>"></select>
+            <%}%>
             </div>
         </tr>
         <tr class="text-table3-tr">
             <div data-toggle="distpicker">
             <div class="sel0">&nbsp;&nbsp;居&nbsp;&nbsp;住&nbsp;&nbsp;地：</div>
             <div class="sel2"></div>
+            <%if(user.getHome_province() == ""){%>
             <select class="sel1" data-province="------ 选择省 ------"></select>
+            <%}%>
+            <%if(user.getHome_province() != ""){%>
+            <select class="sel1" data-province="<%=user.getHome_province()%>"></select>
+            <%}%>
             <div class="sel2"></div>
+            <%if(user.getHome_city() == ""){%>
             <select class="sel1" data-city="------ 选择市 ------"></select>
+            <%}%>
+            <%if(user.getHome_city() != ""){%>
+            <select class="sel1" data-city="<%=user.getHome_city()%>"></select>
+            <%}%>
             <div class="sel2"></div>
+            <%if(user.getHome_area() == ""){%>
             <select class="sel1" data-district="------ 选择区 ------"></select>
+            <%}%>
+            <%if(user.getHome_area() != ""){%>
+            <select class="sel1" data-district="<%=user.getHome_area()%>"></select>
+            <%}%>
             </div>
         </tr>
     </table>
